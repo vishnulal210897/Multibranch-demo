@@ -14,9 +14,9 @@ pipeline {
            sh 'node --version' 
         }
      }
-     stage('Regression Test') { 
+     stage('Unit Test') { 
         steps { 
-           sh 'echo "Regression testing Application..."'
+           sh 'echo "Unit testing Application..."'
         }
       }
          stage("Deploy nodejs application") { 
