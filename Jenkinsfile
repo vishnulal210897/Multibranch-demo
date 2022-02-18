@@ -8,14 +8,9 @@ pipeline {
            checkout([$class: 'GitSCM', branches: [[name: '*/stage']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vishnulal210897/Multibranch-demo.git']]])
         }
      }
-     stage('Node Version') { 
+     stage('Setup') { 
         steps { 
            sh 'node -version' 
-        }
-     }
-     stage('Install Dependencies') { 
-        steps { 
-           sh 'npm install' 
         }
      }
      stage('Regression Test') { 
