@@ -9,14 +9,9 @@ pipeline {
         }
      }
         
-     stage('Node Version') { 
+     stage('Setup') { 
         steps { 
            sh 'node --version' 
-        }
-     }
-     stage('Install Dependencies') { 
-        steps { 
-           sh 'npm install' 
         }
      }
      stage('Regression Test') { 
