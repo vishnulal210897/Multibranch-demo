@@ -10,7 +10,7 @@ pipeline {
      }
      stage('Setup') { 
         steps { 
-           sh 'node -version' 
+           sh 'node --version' 
         }
      }
      stage('Regression Test') { 
