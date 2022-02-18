@@ -3,7 +3,12 @@ pipeline {
   docker { image 'node:latest' }
      }
    stages {
-   
+     stage('Checkout SCM') { 
+        steps { 
+           checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vishnulal210897/Multibranch-demo.git']]])
+        }
+     }
+        
      stage('Node Version') { 
         steps { 
            sh 'node --version' 
