@@ -13,11 +13,6 @@ pipeline {
            sh 'node --version' 
         }
      }
-     stage('Smoke Test') { 
-        steps { 
-           sh 'echo "Smoke testing Application..."'
-        }
-      }
          stage("Deploy nodejs application") { 
          steps { 
            sh 'echo "deploying application..."'
