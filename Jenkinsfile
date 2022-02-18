@@ -1,6 +1,7 @@
 pipeline { 
-     agent docker { image 'node:latest' }
-  
+     agent {
+  docker { image 'node:latest' }
+     }
    stages {
    
      stage('Node Version') { 
@@ -13,18 +14,20 @@ pipeline {
            sh 'npm install' 
         }
      }
-     stage('Unit Test') { 
+     stage('Regression Test') { 
         steps { 
-           sh 'echo "Unit testing Application..."'
+           sh 'echo "Regression testing Application..."'
         }
       }
          stage("Deploy nodejs application") { 
          steps { 
            sh 'echo "deploying application..."'
          }
-
      }
-  
    	}
-
+   post {
+    always {
+      cleanWs()
+    }
+  }
    }
